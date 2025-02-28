@@ -1,0 +1,80 @@
+<div class="dashboard h-100">
+    @if (viewVisible === '') {
+        <div class="d-flex flex-row imgdasboard">
+            <div class="logo flex-grow-1">
+                <img src="assets/dashboardCar.png" alt="logo">
+            </div>
+            <div class="flex-grow-1">
+                <div class="options-area justify-content-md-center d-flex flex-column p-4">
+                    <h2>Let's begin now!</h2>
+                    <p>With so many good options to choose from, you’re sure to find a perfect car. You can easily search for a car too.</p>
+                    <div class="d-flex flex-row gap-4">
+                        <div class="text-center">
+                            <button type="button" (click)="showView(0)" class="btn btn-lg">{{'Search for car' | uppercase}}</button>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" (click)="showView(1)" class="btn btn-lg">{{'Available cars' | uppercase}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    } @else {
+    <div class="close-area">
+        <button type="button" (click)="close()" class="btn-close btn-close-white" aria-label="Close"></button>
+    </div>
+    }
+
+    <div class="container">
+        @if (viewVisible === '') {
+            <div class="about">
+                <h2 class="text-center">About us</h2>
+                <div>
+                    Lorem ipsum odor amet, consectetuer adipiscing elit. Volutpat nostra habitasse at gravida ut justo. Porttitor
+                    pharetra
+                    pellentesque id penatibus quam tempus amet nostra. Cras sed turpis semper platea odio molestie. Donec montes id
+                    turpis
+                    sem enim ullamcorper. Nunc aptent sed maximus a donec proin. Etiam libero fringilla vulputate, augue sem nascetur
+                    viverra donec. In dignissim pellentesque faucibus mollis eget vestibulum nascetur. Porta metus torquent finibus
+                    viverra
+                    vitae.
+                    <br><br>
+                    Mollis nisi tellus natoque turpis donec libero viverra. Natoque quis vel nam, elementum at senectus quis porttitor.
+                    Suscipit luctus fringilla mollis per diam laoreet molestie vestibulum tincidunt. Mi curabitur himenaeos, etiam morbi
+                    rutrum penatibus. Dis magnis taciti vehicula dapibus potenti amet nostra aliquam quam. Orci consequat arcu aptent
+                    volutpat habitant orci efficitur. Suspendisse viverra est porttitor placerat euismod lobortis consectetur.
+                    <br><br>
+                    Porta nostra egestas proin gravida himenaeos. Consequat nam magna malesuada cursus senectus. Bibendum litora ornare
+                    euismod inceptos orci, tortor mattis velit. Egestas semper tristique arcu, habitasse class porta. Eu ac primis
+                    semper
+                    luctus vivamus lacus. Magnis etiam habitasse posuere augue donec ligula pellentesque. Pulvinar nec nulla interdum
+                    non
+                    montes primis. Tempor consequat torquent augue suspendisse risus platea sodales dis. Sagittis vestibulum sapien erat
+                    sapien nisi lacus.
+                    <br><br>
+                    Felis felis diam finibus massa rhoncus quis congue vel? Molestie laoreet cras pretium sed morbi per. Aliquet leo
+                    per,
+                    massa semper ornare accumsan. Etiam proin libero natoque consectetur proin integer nec molestie. Nunc integer
+                    pharetra
+                    suspendisse mattis erat nullam ridiculus interdum. Nam vestibulum per ultrices lectus himenaeos elit faucibus.
+                    <br><br>
+                    Posuere per adipiscing luctus finibus venenatis mauris. Adipiscing aenean fermentum odio sociosqu pharetra nisi.
+                    Vivamus
+                    sollicitudin aptent dignissim tristique; phasellus hendrerit etiam quam. Tempor efficitur metus tincidunt aptent
+                    inceptos pellentesque, semper volutpat praesent. Porta litora imperdiet nibh ex nulla ridiculus malesuada dictum.
+                    Ipsum
+                    neque dignissim vehicula rhoncus dictum; pretium netus augue. Volutpat arcu laoreet nisl litora est lacus.
+                </div>
+            </div>
+        }
+
+        @switch (viewVisible) {
+            @case ("search") {
+            <app-search></app-search>
+            }
+            @case ("list") {
+            <app-list></app-list>
+            }
+        }
+    </div>
+</div>

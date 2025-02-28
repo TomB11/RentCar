@@ -1,0 +1,49 @@
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/bootstrap";
+
+// Your custom styles
+html,
+body {
+    height: 100%;
+    background-image: url('/assets/bck.png');;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    overflow: hidden;
+
+    button {
+        color: orange !important;
+        border-color: orange !important;
+
+        &:hover {
+            background-color: rgb(54, 54, 54, 1) !important;
+        }
+    }
+
+    .close-area {
+        text-align: end;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+
+        button {
+            padding: 20px;
+            margin: 5px;
+            border-radius: 10px;
+            background-color: white;
+        }
+    }
+
+    .card {
+        background: black;
+        border-color: orange !important;
+
+        .card-header {
+            font-size: 2rem;
+            color: orange !important;
+            border-color: orange !important;
+            background-color: rgba(54, 54, 54, 0.8);;
+        }
+    }
+}

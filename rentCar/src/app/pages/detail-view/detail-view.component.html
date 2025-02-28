@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            {{carName | uppercase}}
+        </div>
+        <div class="all-cars card-body">
+            <div class="row justify-content-center">
+                <div class="image">
+                    <img [src]="carPhoto !== '' ? carPhoto : 'assets/car-icon.png'" alt="car">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ carName }}</h5>
+                    <p class="card-text">{{ carModel }}</p>
+                    <p>{{ carStatus }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

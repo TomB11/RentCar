@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            {{'All cars' | uppercase}}
+        </div>
+        <div class="all-cars card-body">
+            <div class="row">
+                @for (car of listOfCars; track $index) {
+                <div class="car-box" (click)="openDetail(car.id)">
+                    <div class="image">
+                        <img [src]="car.image ? car.image : 'assets/car-icon.png'" alt="car">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ car.brand }}</h5>
+                        <p class="card-text">{{ car.model }}</p>
+                        <p [ngClass]="car.free ? 'text-center m-0 free' : 'text-center m-0 busy'">{{ car.free ? 'Available' : 'Rented' }}</p>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
