@@ -1,1 +1,24 @@
-<p>search works!</p>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            {{'Search' | uppercase}}
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="searchDiv p-1 input-group input-group-lg">
+                    <input type="text" #searchInput (change)="searchCar(searchInput.value)" placeholder="Search for brand or model"/>
+                </div>
+            </div>
+            @if (searchInput.value === '' || this.api.listOfCars().length === 0) {
+                <div class="noResults p-5 text-center">
+                    <span>No results</span>
+                </div>          
+            } @else {
+                <div class="searchResults p-5">
+                    <span>I found {{ this.api.carsFounded() }} cars</span>
+                    <app-card [enteredArray]="this.api.listOfCars"></app-card>
+                </div>
+            }
+        </div>
+    </div>
+</div>

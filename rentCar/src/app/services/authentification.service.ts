@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 interface LoginData {
   email: string,
@@ -11,10 +11,12 @@ interface LoginData {
 })
 export class AuthentificationService {
 
+  public userLogged = signal('')
+
   constructor(public httpClient: HttpClient) { }
 
   signUp(receivedEmail: string, receivedPassword: string) {
-    return this.httpClient.post<LoginData>('', {
+    return this.httpClient.post<LoginData>('someBackendWEBPage/login', {
       email: receivedEmail,
       password: receivedPassword
     })

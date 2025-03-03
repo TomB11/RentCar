@@ -1,0 +1,42 @@
+:host {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.car-box {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid orange;
+    border-radius: 10px;
+    background-color: rgb(54, 54, 54, 0.8);
+    margin: 5px;
+    cursor: pointer;
+    color: white;
+    flex: 1;
+    min-width: 148px;
+
+    &:hover {
+        background-color: rgb(54, 54, 54, 1);
+    }
+
+    .image {
+        height: 100%;
+        padding: 20px;
+        border-bottom: 1px solid orange;
+        align-content: space-evenly;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .free {
+        background-color: green;
+        border-radius: 20px;
+    }
+
+    .busy {
+        background-color: red;
+        border-radius: 20px
+    }
+}

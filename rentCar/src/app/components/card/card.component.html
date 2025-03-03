@@ -1,0 +1,13 @@
+@for (car of enteredArray(); track $index) {
+    <div class="car-box">
+        <div class="image">
+            <img [src]="car.image ? car.image : 'assets/car-icon.png'" alt="car">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ car.brand }}</h5>
+            <p class="card-text">{{ car.model }}</p>
+            <p [ngClass]="car.free ? 'text-center m-0 free' : 'text-center m-0 busy'">{{ car.free ? 'Available' : 'Rented'
+                }}</p>
+        </div>
+    </div>
+}

@@ -1,0 +1,28 @@
+.searchDiv {
+    height: 50px;
+    border: 1px solid orange;
+    border-radius: 20px;
+    background-color: rgba(54, 54, 54, 0.8);
+    margin: 10px;
+    width: 98%;
+
+    input {
+        width: 100%;
+        color: orange !important;
+        background-color: rgba(54, 54, 54, 0.8);
+        border-radius: 20px;
+        font-size: 16px;
+    }
+}
+
+.searchResults,
+.noResults {
+    border-radius: 20px;
+    border: 1px solid orange;
+    background-color: rgba(54, 54, 54, 0.8);
+    color: white;
+}
+
+.noResults {
+    color: gray;
+}

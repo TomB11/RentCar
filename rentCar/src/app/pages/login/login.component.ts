@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-
+  userExist = 0
   loginForm: FormGroup
 
   constructor(public formBuilder: FormBuilder, public authService: AuthentificationService, public router: Router) {
@@ -23,8 +23,22 @@ export class LoginComponent {
   }
 
   onSubmit(form: FormGroup) {
-    console.log(form)
-    this.authService.signUp(form.get('email')?.value, form.get('password')?.value)
-    this.router.navigateByUrl('dashboard')
+    let email = form.get('email')?.value
+    let pasw = form.get('password')?.value
+
+    this.authService.signUp(email, pasw).subscribe((data) => {
+      console.log(data)
+    }, error => {
+      console.log(error)
+    })
+
+    if(email === 'joe.doe@admin.com' && pasw === '000000') {
+      this.userExist = 0
+      this.authService.userLogged.set(email)
+      this.router.navigateByUrl('dashboard')
+      this.loginForm.reset()
+    } else {
+      this.userExist = 2
+    }
   }
 }
