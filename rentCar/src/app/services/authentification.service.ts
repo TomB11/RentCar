@@ -16,9 +16,17 @@ export class AuthentificationService {
   constructor(public httpClient: HttpClient) { }
 
   signUp(receivedEmail: string, receivedPassword: string) {
+    this.setLocalStorage(receivedEmail, receivedPassword)
     return this.httpClient.post<LoginData>('someBackendWEBPage/login', {
       email: receivedEmail,
       password: receivedPassword
     })
   }
+
+  setLocalStorage(email: string, pssw: string) {
+    localStorage.setItem('email', email)
+    localStorage.setItem('password', pssw)
+  }
+
+  
 }

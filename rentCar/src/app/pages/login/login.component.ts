@@ -26,19 +26,19 @@ export class LoginComponent {
     let email = form.get('email')?.value
     let pasw = form.get('password')?.value
 
-    this.authService.signUp(email, pasw).subscribe((data) => {
-      console.log(data)
-    }, error => {
-      console.log(error)
-    })
-
     if(email === 'joe.doe@admin.com' && pasw === '000000') {
+      this.authService.signUp(email, pasw).subscribe((data) => {
+        console.log(data)
+      }, error => {
+        console.log(error)
+      })
+      
       this.userExist = 0
       this.authService.userLogged.set(email)
       this.router.navigateByUrl('dashboard')
       this.loginForm.reset()
     } else {
-      this.userExist = 2
+      this.userExist = 1
     }
   }
 }
