@@ -1,4 +1,5 @@
 <div class="form-signin p-4">
+    {{ state$ | async | json }}
     <form (ngSubmit)="onSubmit(loginForm)" [formGroup]="loginForm">
         <img class="mb-4" src="assets/logo.png" alt="" width="207" height="157">
     
@@ -16,7 +17,7 @@
             <label for="floatingPassword">Password</label>
         </div>
 
-        @if (userExist === 1) {
+        @if (userExist === false) {
             <div class="bad-login my-3">{{'This user is not exist "try joe.doe@admin.com and 000000"'}}</div>
         }
 

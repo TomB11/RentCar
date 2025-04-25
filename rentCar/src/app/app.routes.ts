@@ -7,12 +7,17 @@ import { inject } from '@angular/core';
 const canMatch: CanMatchFn = (route, segments) => {
     const router = inject(Router)
     let shouldHaveAccessEmail = localStorage.getItem('email') ? localStorage.getItem('email') : ''
-    let rightPassword = localStorage.getItem('pssw') ? localStorage.getItem('pssw') : ''
+    let rightPassword = localStorage.getItem('password') ? localStorage.getItem('password') : ''
+
+    console.log("shouldHaveAccessEmail", shouldHaveAccessEmail)
+    console.log("shoulrightPassworddHaveAccessEmail", rightPassword)
 
     if (shouldHaveAccessEmail === 'joe.doe@admin.com' && rightPassword === '000000') {
+        console.log("LOGGED")
         return true
     }
 
+    console.log("NOT LOGGED")
     return new RedirectCommand(router.parseUrl('login'))
 } 
 

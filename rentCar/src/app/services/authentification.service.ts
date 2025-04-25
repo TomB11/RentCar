@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
+import { Observable } from 'rxjs';
 
 interface LoginData {
   email: string,
@@ -15,9 +16,10 @@ export class AuthentificationService {
 
   constructor(public httpClient: HttpClient) { }
 
-  signUp(receivedEmail: string, receivedPassword: string) {
+  signUp(receivedEmail: string, receivedPassword: string): Observable<any> {
+    console.log('ASASASSS')
     this.setLocalStorage(receivedEmail, receivedPassword)
-    return this.httpClient.post<LoginData>('someBackendWEBPage/login', {
+    return this.httpClient.post<string>('someBackend/WebPage/login', {
       email: receivedEmail,
       password: receivedPassword
     })

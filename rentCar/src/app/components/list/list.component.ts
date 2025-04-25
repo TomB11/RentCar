@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
-import { Cars } from '../../cars';
+import { Cars } from '../../interfaces/cars';
 import { CardComponent } from '../card/card.component';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, Input, signal } from '@angular/core';
-import { Cars } from '../../cars';
+import { Cars } from '../../interfaces/cars';
 import { CommonModule } from '@angular/common';
 
 @Component({

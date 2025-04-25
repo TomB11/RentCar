@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { computed, Injectable, signal, Signal } from '@angular/core';
-import { Cars } from '../cars';
+import { Cars } from '../interfaces/cars';
 import { filter, tap } from 'rxjs/operators';
 
 @Injectable({

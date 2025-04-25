@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, Signal, signal } from '@angular/core';
-import { Cars } from '../../cars';
+import { Cars } from '../../interfaces/cars';
 import { ApiService } from '../../services/api.service';
 import { CardComponent } from '../card/card.component';
 
